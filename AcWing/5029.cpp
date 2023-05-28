@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 #define endl "\n"
-
 using namespace std;
 
 const int N = 1005;
