@@ -2,8 +2,19 @@
 #define endl "\n"
 using namespace std;
 
+int a[105];
+
 void solve() {
-    
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    int mx = 1 + n;
+    for (int i = 0; i < n; i++) {
+        cout << mx - a[i] << " ";
+    }
+    cout << endl;
 }
 
 int main() {
