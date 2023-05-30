@@ -9,10 +9,10 @@
                 "-g",
                 "${file}",
                 "-o",
-                "..\\.Debug\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}\\.Debug\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
-                "cwd": "..\\.Debug"
+                "cwd": "${fileDirname}"
             },
             "problemMatcher": [
                 "$gcc"
