@@ -6,10 +6,6 @@ const int N = 2e5 + 5;
 const long long M = 4e10 + 5;
 int a[N]{0}, b[N]{0};
 
-bool check(int x) {
-    
-}
-
 void solve() {
     int n, ans;
     long long m;
@@ -23,7 +19,17 @@ void solve() {
         cin >> b[i];
         r = max(r, a[i] + b[i]);
     }
-    l--;r++;
+    l--;
+    r++;
+    function<bool(int)> check = [=](int x) -> bool {
+        long long tmp = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] + b[i] < x) return false;
+            tmp += (x - a[i]);
+            if (tmp > m) return false;
+        }
+        return true;
+    };
     while (l + 1 != r) {
         int mid = ((r - l) >> 1) + l;
         if (check(mid)) {
