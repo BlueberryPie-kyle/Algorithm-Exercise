@@ -19,17 +19,17 @@ void solve() {
         cin >> b[i];
         r = max(r, a[i] + b[i]);
     }
-    l--;
-    r++;
     function<bool(int)> check = [=](int x) -> bool {
         long long tmp = 0;
         for (int i = 0; i < n; i++) {
-            if (a[i] + b[i] < x) return false;
-            tmp += (x - a[i]);
-            if (tmp > m) return false;
+            if (b[i] + a[i] < x) return false;
+            else tmp += max(x - a[i], 0);
         }
-        return true;
+        if (tmp <= m) return true;
+        return false;
     };
+    l--;
+    r++;
     while (l + 1 != r) {
         int mid = ((r - l) >> 1) + l;
         if (check(mid)) {
@@ -39,7 +39,7 @@ void solve() {
             r = mid;
         }
     }
-    cout << ans;
+    cout << ans << endl;
 }
 
 int main() {
