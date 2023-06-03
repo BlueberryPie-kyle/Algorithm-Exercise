@@ -11,6 +11,7 @@ inline int read() {
 }
 
 void solve() {
+    
 }
 
 int main() {
