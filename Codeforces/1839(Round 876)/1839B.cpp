@@ -5,7 +5,8 @@ using namespace std;
 const int N = 2e5 + 5;
 
 void solve() {
-    int n, ans = 0;
+    int n;
+    long long ans = 0;
     cin >> n;
     priority_queue<int> pq[n + 1];
     for (int i = 0, x, y; i < n; i++) {
