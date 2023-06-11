@@ -36,6 +36,10 @@ void tarjan(int cur) {
     }
     for (int i = 0; i < q[cur].size(); i++) {
         int x = cur, y = q[x][i], id = qid[x][i];
+        if (x == y) {
+            ans[id] = x;
+            continue;
+        }
         if (vis[y] == 2) ans[id] = find(y);
     }
     vis[cur] = 2;
