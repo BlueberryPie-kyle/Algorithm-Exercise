@@ -1,10 +1,19 @@
 #include <bits/stdc++.h>
 #define endl "\n"
-#define ll long long
 using namespace std;
 
+int ans = 0;
+
 void solve() {
-    
+    int l, r;
+    cin >> l >> r;
+    for (int i = l; i <= r; i++) {
+        string str = to_string(i);
+        for (auto j : str) {
+            if (j == '2') ans++;
+        }
+    }
+    cout << ans << endl;
 }
 
 int main() {
