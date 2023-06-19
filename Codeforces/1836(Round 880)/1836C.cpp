@@ -21,7 +21,7 @@ void solve() {
         int l = max(fPow(10, C - 1) - i, fPow(10, B - 1));
         int r = min(fPow(10, C) - i, fPow(10, B));
         if (l >= r) continue;
-        if (r - l < k) k = k - r + l;
+        if (r - l < k) k -= r + l;
         else {
             cout << i << " + " << l + k - 1 << " = " << i + l + k - 1 << endl;
             return;
