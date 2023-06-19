@@ -14,8 +14,7 @@ inline int read() {     //快读
 ll fPow(ll x, ll n) {  //快速幂
     ll result = 1;
     while (n > 0) {
-        if (n & 1)
-            result *= x;
+        if (n & 1) result *= x;
         x *= x;
         n >>= 1;
     }
