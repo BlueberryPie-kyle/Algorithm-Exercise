@@ -5,41 +5,35 @@ using namespace std;
 
 const int N = 1e5 + 5;
 
-struct Seg {
-    int l, r;
-    int num;
-    bool operator < (const Seg a) {
-        return r != a.r ? r > a.r : l < a.l;
-    }
-};
+int q, n, m, t;
+int l[N], r[N];
+int a[N], s[N];
 
-void solve() {  //TLE
-    int n, m, q, x;
-    bool ok = false;
+bool check(int x) {
+    for (int i = 1; i <= n; i++) s[i] = 0;
+    for (int i = 1; i <= x; i++) s[a[i]]++;
+    for (int i = 1; i <= n; i++) s[i] += s[i - 1];
+    for (int i = 1; i <= m; i++) {
+        if (s[r[i]] - s[l[i] - 1] > r[i] - l[i] + 1 - (s[r[i]] - s[l[i] - 1])) return true;
+    }
+    return false;
+}
+
+void solve() {
     cin >> n >> m;
-    Seg a[m];
-    for (int i = 0; i < m; i++) {
-        cin >> a[i].l >> a[i].r;
-        a[i].num = a[i].r - a[i].l + 1;
+    for (int i = 1; i <= m; i++) {
+        cin >> l[i] >> r[i];
     }
     cin >> q;
-    sort(a, a + m);
-    for (int _ = 0; _ < q; _++) {
-        cin >> x;
-        if (ok) continue;
-        for (int i = 0; i < m; i++) {
-            if (x > a[i].r) break;
-            if (x >= a[i].l) {
-                a[i].num -= 2;
-                if (a[i].num < 0) {
-                    cout <<  _ + 1 << endl;
-                    ok = true;
-                    break;
-                }
-            }
-        }
+    for (int i = 1; i <= q; i++) cin >> a[i];
+    int l = 1, r = q + 1;
+    while (l < r) {
+        int mid = l + r >> 1;
+        if (check(mid)) r = mid;
+        else l = mid + 1;
     }
-    if (!ok) cout << -1 << endl;
+    if (l > q) l = -1;
+    cout << l << endl;
 }
 
 int main() {
