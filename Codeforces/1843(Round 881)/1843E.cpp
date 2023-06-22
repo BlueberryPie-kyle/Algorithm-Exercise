@@ -5,35 +5,31 @@ using namespace std;
 
 const int N = 1e5 + 5;
 
-int q, n, m, t;
-int l[N], r[N];
-int a[N], s[N];
+int n, m, q, a[N], l[N], r[N], s[N];
 
 bool check(int x) {
-    for (int i = 1; i <= n; i++) s[i] = 0;
-    for (int i = 1; i <= x; i++) s[a[i]]++;
-    for (int i = 1; i <= n; i++) s[i] += s[i - 1];
+    memset(a, 0, sizeof a);
+    for (int i = 1; i <= x; i++) a[s[i]]++;
+    for (int i = 1; i <= n; i++) a[i] += a[i - 1];
     for (int i = 1; i <= m; i++) {
-        if (s[r[i]] - s[l[i] - 1] > r[i] - l[i] + 1 - (s[r[i]] - s[l[i] - 1])) return true;
+        if (a[r[i]] - a[l[i] - 1] > r[i] - l[i] + 1 - (a[r[i]] - a[l[i] - 1])) return true;
     }
     return false;
 }
 
 void solve() {
     cin >> n >> m;
-    for (int i = 1; i <= m; i++) {
-        cin >> l[i] >> r[i];
-    }
+    for (int i = 1; i <= m; i++) cin >> l[i] >> r[i];
     cin >> q;
-    for (int i = 1; i <= q; i++) cin >> a[i];
-    int l = 1, r = q + 1;
-    while (l < r) {
-        int mid = l + r >> 1;
-        if (check(mid)) r = mid;
-        else l = mid + 1;
+    for (int i = 1; i <= q; i++) cin >> s[i];
+    int L = 1, R = q + 1;
+    while (L < R) {
+        int mid = ((R - L) >> 1) + L;
+        if (check(mid)) R = mid;
+        else L = mid + 1;
     }
-    if (l > q) l = -1;
-    cout << l << endl;
+    if (L > q) cout << -1 << endl;
+    else cout << L << endl;
 }
 
 int main() {
