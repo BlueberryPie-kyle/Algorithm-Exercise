@@ -11,7 +11,7 @@ inline int read() {     //快读
     return num;
 }
 
-ll fPow(ll x, ll n) {  //快速幂
+ll fPow(ll x, ll n) {   //快速幂
     ll result = 1;
     while (n > 0) {
         if (n & 1) result *= x;
@@ -21,8 +21,15 @@ ll fPow(ll x, ll n) {  //快速幂
     return result;
 }
 
+int gcd(int a, int b) { //最大公因数
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int lcm(int a, int b) { //最小公倍数
+    return a / gcd(a, b) * b;
+}
+
 void solve() {
-    
 }
 
 int main() {
