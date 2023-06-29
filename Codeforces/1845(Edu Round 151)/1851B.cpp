@@ -7,10 +7,10 @@ void solve() {
     ll ax = 0, bx = 0, cx = 0, ay = 0, by = 0, cy = 0;
     cin >> ax >> ay >> bx >> by >> cx >> cy;
     int ans = 1;
-    if ((ax < bx && ax < cx) or (ax > bx && ax > cx)) {
+    if ((ax < bx and ax < cx) or (ax > bx and ax > cx)) {
         ans += min(abs(ax - bx), abs(ax - cx));
     }
-    if ((ay < by && ay < cy) or (ay > by && ay > cy)) {
+    if ((ay < by and ay < cy) or (ay > by and ay > cy)) {
         ans += min(abs(ay - by), abs(ay - cy));
     }
     cout << ans << endl;
