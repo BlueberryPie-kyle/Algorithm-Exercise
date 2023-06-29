@@ -4,21 +4,16 @@
 using namespace std;
 
 void solve() {
-    int xa, xb, xc, ya, yb, yc;
-    cin >> xa >> ya >> xb >> yb >> xc >> yc;
-    if (xa < max(xc, xb) && xa > min(xc, xb) && ya < max(yc, yb) && ya > min(yc, yb)) {
-        cout << 1 << endl;
-        return;
+    ll ax = 0, bx = 0, cx = 0, ay = 0, by = 0, cy = 0;
+    cin >> ax >> ay >> bx >> by >> cx >> cy;
+    int ans = 1;
+    if ((ax < bx && ax < cx) or (ax > bx && ax > cx)) {
+        ans += min(abs(ax - bx), abs(ax - cx));
     }
-    if (xa <= max(xc, xb) && xa >= min(xc, xb)) {
-        cout << min(abs(yb - ya), abs(yc - ya)) + 1 << endl;
-        return;
+    if ((ay < by && ay < cy) or (ay > by && ay > cy)) {
+        ans += min(abs(ay - by), abs(ay - cy));
     }
-    if (ya <= max(yc, yb) && ya >= min(yc, yb)) {
-        cout << min(abs(xb - xa), abs(xc - xa)) + 1 << endl;
-        return;
-    }
-    cout << min((abs(xa - xb) + abs(ya - yb)), (abs(xa - xc) + abs(ya - yc))) + 1 << endl;
+    cout << ans << endl;
 }
 
 int main() {
