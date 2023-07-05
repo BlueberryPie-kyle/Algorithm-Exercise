@@ -11,6 +11,23 @@ inline int read() {     //快读
     return num;
 }
 
+const int MX = 1e6;
+vector<int> primes;
+int getPrimes = []() {       //欧拉筛
+    bool np[MX + 1]{};
+    for (int i = 2; i <= MX; ++i) {
+        if (!np[i]) primes.push_back(i);
+        for (int p: primes) {
+            if (i * p > MX) break;
+            np[i * p] = true;
+            if (i % p == 0) break;
+        }
+    }
+    primes.push_back(MX + 1);
+    primes.push_back(MX + 1);
+    return 0;
+}();                    //该写法意为声明一个自动运行的lambda函数
+
 ll fPow(ll x, ll n) {   //快速幂
     ll result = 1;
     while (n > 0) {
