@@ -9,9 +9,7 @@ void solve() {
     cin >> n >> m;
     string s;
     cin >> s;
-    int nxt[n + 1], lst[n + 1];
-    memset(nxt, n, sizeof(nxt));
-    memset(lst, -1, sizeof(lst));
+    vector<int> nxt(n + 1, n), lst(n + 1, -1);
     for (int i = n - 1; i >= 0; i--) {
         nxt[i] = s[i] == '1' ? i : nxt[i + 1];
     }
