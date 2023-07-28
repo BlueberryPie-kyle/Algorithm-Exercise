@@ -5,21 +5,17 @@ using namespace std;
 
 void solve() {
     int n, k;
-    cin >> n >> k;
-    pair<int, int> a[n];
+    cin >> n >> k;    
+    vector<pair<int, int>> a(n);
     for (int i = 0, x; i < n; i++) {
         cin >> x;
-        x %= k;
         a[i] = {x, i};
     }
-    sort(a, a + n, [&](const pair<int, int> &a, const pair<int, int> &b) {
-        if (a.first == b.first) return a.second < b.second;
-        else return a.first < b.first;
+    stable_sort(a.begin(), a.end(),
+        [&](pair<int, int> i, pair<int, int> j) {
+            return (i.first - 1) % k > (j.first - 1) % k;
     });
-    for (int i = 0; i < n; i++) {
-        cout << a[i].second + 1 << " ";
-    }
-    cout << endl;
+    for (int i = 0; i < n; i++) cout << a[i].second + 1 << " \n"[i == n - 1];
 }
 
 int main() {
