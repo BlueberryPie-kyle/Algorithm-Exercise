@@ -12,7 +12,7 @@ void solve() {
         cin >> x;
         a[i] -= x;
     }
-    int x = *max_element(a.begin(), a.end());
+    int x = *max_element(a.begin(), a.end()); 
     vector<int> ans;
     for (int i = 0; i < n; i++) {
         if (a[i] == x) ans.emplace_back(i + 1); 
