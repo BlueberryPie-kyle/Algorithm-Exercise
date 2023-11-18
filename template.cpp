@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(), a.end()
-#define ascend(a) {sort(all(a), less<int>());}
-#define decline(a) {sort(all(a), greater<int>());}
+#define ascend(a) sort(all(a), less<int>())
+#define decline(a) sort(all(a), greater<int>())
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define EACH(n) for (auto i : n)
 #define endl "\n"
