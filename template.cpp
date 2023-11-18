@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(), a.end()
+#define FOR(n) for (int i = 0, x; i < n; i++)
 #define endl "\n"
 #define ll long long
 using namespace std;
