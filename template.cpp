@@ -3,7 +3,7 @@
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define EACH(n) for (auto i : n)
 #define endl "\n"
-#define ll long long
+typedef long long ll;
 const int iMax = INT_MAX;
 const int iMin = INT_MIN;
 const ll i64Max = LONG_LONG_MAX;
