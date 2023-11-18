@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
+#define iMax INT_MAX
+#define iMin INT_MIN
+#define i64Max LONG_LONG_MAX
+#define i64Min LONG_LONG_MIN
 #define all(a) a.begin(), a.end()
-#define FOR(n) for (int i = 0, x; i < n; i++)
+#define FOR(a, n) for (int i = a, x; i < n; i++)
 #define endl "\n"
 #define ll long long
 using namespace std;
