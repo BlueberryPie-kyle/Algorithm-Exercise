@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define all(a) a.begin(), a.end()
 #define endl "\n"
 #define ll long long
 using namespace std;
