@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(), a.end()
+#define ascend(a) {sort(all(a), less<int>());}
+#define decline(a) {sort(all(a), greater<int>());}
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define EACH(n) for (auto i : n)
 #define endl "\n"
@@ -13,6 +15,8 @@ const int iMax = INT_MAX;
 const int iMin = INT_MIN;
 const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
+using vi = vector<int>;
+using vll = vector<ll>;
 
 inline int read() {     //快读
     char ch = '*';
