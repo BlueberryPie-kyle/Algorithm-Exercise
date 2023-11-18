@@ -1,6 +1,9 @@
 # exe
 .Debug
 
+#Test example
+TestCases/test.out
+
 #Test file
 TEST.py
 TEST.cpp
