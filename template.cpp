@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 #define all(a) a.begin(), a.end()
 #define FOR(a, n) for (int i = a, x; i < n; i++)
+#define EACH(n) for (auto i : n)
 #define endl "\n"
 #define ll long long
 const int iMax = INT_MAX;
