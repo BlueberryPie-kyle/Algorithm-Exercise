@@ -3,12 +3,16 @@
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define EACH(n) for (auto i : n)
 #define endl "\n"
+#define first x
+#define second y
+
+using namespace std;
+
 typedef long long ll;
 const int iMax = INT_MAX;
 const int iMin = INT_MIN;
 const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
-using namespace std;
 
 inline int read() {     //快读
     char ch = '*';
