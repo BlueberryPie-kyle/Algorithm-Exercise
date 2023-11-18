@@ -2,6 +2,7 @@
 #define all(a) a.begin(), a.end()
 #define ascend(a) sort(all(a), less<int>())
 #define decline(a) sort(all(a), greater<int>())
+#define io ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define EACH(n) for (auto i : n)
 #define endl "\n"
@@ -16,7 +17,9 @@ const int iMin = INT_MIN;
 const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
 using vi = vector<int>;
-using vll = vector<ll>;
+using vii = vector<int, vector<int>>;
+using vl = vector<ll>;
+using pii = pair<int, int>;
 
 inline int read() {     //快读
     char ch = '*';
@@ -27,7 +30,7 @@ inline int read() {     //快读
 }
 
 const int MX = 1e6;
-vector<int> primes;
+vi primes;
 int getPrimes = []() {       //欧拉筛
     bool np[MX + 1]{};
     for (int i = 2; i <= MX; ++i) {
@@ -65,9 +68,7 @@ void solve() {
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+    io;
     int t = 1;
     cin >> t;
     while (t--) {
