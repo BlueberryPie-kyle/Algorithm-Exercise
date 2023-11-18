@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
-#define iMax INT_MAX
-#define iMin INT_MIN
-#define i64Max LONG_LONG_MAX
-#define i64Min LONG_LONG_MIN
 #define all(a) a.begin(), a.end()
 #define FOR(a, n) for (int i = a, x; i < n; i++)
 #define endl "\n"
 #define ll long long
+const int iMax = INT_MAX;
+const int iMin = INT_MIN;
+const ll i64Max = LONG_LONG_MAX;
+const ll i64Min = LONG_LONG_MIN;
 using namespace std;
 
 inline int read() {     //快读
