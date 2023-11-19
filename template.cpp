@@ -10,16 +10,16 @@
 #define second y
 
 using namespace std;
+using vi = vector<int>;
+using vii = vector<int, vector<int>>;
+using vl = vector<long long>;
+using pii = pair<int, int>;
 
 typedef long long ll;
 const int iMax = INT_MAX;
 const int iMin = INT_MIN;
 const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
-using vi = vector<int>;
-using vii = vector<int, vector<int>>;
-using vl = vector<ll>;
-using pii = pair<int, int>;
 
 inline int read() {     //快读
     char ch = '*';
