@@ -3,15 +3,13 @@
 #define ascend(a) sort(all(a), less<int>())
 #define decline(a) sort(all(a), greater<int>())
 #define io ios::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-#define FOR(a, n) for (int i = a, x; i < n; i++)
-#define EACH(n) for (auto i : n)
 #define endl "\n"
-#define first x
-#define second y
+#define x first
+#define y second
 
 using namespace std;
 using vi = vector<int>;
-using vii = vector<int, vector<int>>;
+using vii = vector<vector<int>>;
 using vl = vector<long long>;
 using pii = pair<int, int>;
 
