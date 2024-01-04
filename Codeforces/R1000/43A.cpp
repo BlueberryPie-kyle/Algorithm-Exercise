@@ -22,13 +22,22 @@ const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
 
 void solve() {
-    int a, b, c, d, e, f, g;
-    cin >> a >> b >> c;
-    d = (a + b) * c;
-    e = a * (b + c);
-    f = a + b + c;
-    g = a * b * c;
-    cout << max(max(d, e), max(f, g)) << endl;
+    int n, curmx = -1;
+    cin >> n;
+    map<string, int> mp;
+    for (int i = 0; i < n; i++) {
+        string goal;
+        cin >> goal;
+        mp[goal]++;
+    }
+    string winner;
+    for (auto i : mp) {
+        if (i.y > curmx) {
+            winner = i.x;
+            curmx = i.y;
+        }
+    }
+    cout << winner << endl;
 }
 
 int main() {

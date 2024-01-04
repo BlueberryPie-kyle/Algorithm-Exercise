@@ -22,13 +22,11 @@ const ll i64Max = LONG_LONG_MAX;
 const ll i64Min = LONG_LONG_MIN;
 
 void solve() {
-    int a, b, c, d, e, f, g;
-    cin >> a >> b >> c;
-    d = (a + b) * c;
-    e = a * (b + c);
-    f = a + b + c;
-    g = a * b * c;
-    cout << max(max(d, e), max(f, g)) << endl;
+    ll a, b, s;
+    cin >> a >> b >> s;
+    a = abs(a);b = abs(b);
+    if (s < a + b || s % 2 != (a + b) % 2) cout << "No" << endl;
+    else cout << "Yes" << endl;
 }
 
 int main() {
