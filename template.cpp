@@ -27,6 +27,12 @@ inline int read() {     //快读
     return num;
 }
 
+inline void write(int x) {  //快写
+    if(x < 0) putchar('-'),x=-x;
+    if(x > 9) write(x / 10);
+    putchar(x % 10 + '0');
+}
+
 const int MX = 1e6;
 vi primes;
 int getPrimes = []() {       //欧拉筛

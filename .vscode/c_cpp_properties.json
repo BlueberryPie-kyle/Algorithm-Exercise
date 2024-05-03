@@ -11,7 +11,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:\\MinGW\\bin\\gcc.exe",
+            "compilerPath": "D:\\MinGW\\bin\\g++.exe",
             "cStandard": "c17",
             "configurationProvider": "ms-vscode.cmake-tools"
         }
