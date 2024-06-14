@@ -7,5 +7,5 @@ TestCases/test.out
 #Test file
 TEST.py
 TEST.cpp
-heapSort.cpp
+*Sort*.cpp
 *.md
