@@ -1,24 +1,27 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-void solve() {
-    int n;
-    vector<int> x(n, 0);
-    for (int i = 1; i < n; i++) cin >> x[i];
-    vector<int> a(x.size() + 1, 0);
-    a[1] = 1;
-    for (int i = x.size(); i > 1; --i) {
-        int candidate = x[i - 2];
-        while (candidate % a[i - 1] != x[i - 2]) candidate += a[i - 1];
-        a[i] = candidate;
-    }
-    for (int i = 1; i < a.size(); i++) cout << a[i] << " ";
-    cout << endl;
-}
-
 int main() {
-    int t = 0;
-    cin >> t;
-    while (t--) solve();
+    int n;
+    cin >> n;
+    vector<int> card(n), ans(n, 0);
+    for (auto& i : card) cin >> i;
+    for (int start = 0; start < n; start++) {
+        cout << "从" << start << "开始可以取的卡：";
+        int num = 1;
+        vector<int> check(n + 1, 0);
+        for (int i = 0; num < n + 1; i++) {
+            int cur = (start + i) % n;
+            if (check[num] == 0 and card[cur] == num) {
+                cout << num << " ";
+                check[num] = 1;
+                ans[start] += num;
+                num = 1;
+            } else num++;
+        }
+        cout << endl;
+    }
+    cout << *max_element(ans.begin(), ans.end()) << endl;
     return 0;
 }

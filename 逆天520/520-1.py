@@ -1,0 +1,1 @@
+print("Forever and always")

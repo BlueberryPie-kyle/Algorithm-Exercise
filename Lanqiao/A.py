@@ -1,9 +1,16 @@
-i = 100
-
-s = """=(IF(C@>0,C1&"&","")&IF(D@>0,D1&"&","")&IF(E@>0,E1&"&","")&IF(F@>0,F1&"&","")&IF(G@>0,G1&"&","")&IF(H@>0,H1&"&","")&IF(I@>0,I1&"&","")&IF(J@>0,J1&"&","")&IF(K@>0,K1&"&","")&IF(L@>0,L1&"&","")&IF(M@>0,M1&"&","")&IF(N@>0,N1&"&","")&IF(O@>0,O1,""))"""
-
-
-
-while i < 201:
-    print(s.replace("@", str(i)))
-    i += 1
+n = int(input())
+pyq = []
+for _ in range(0, n):
+    ls = list(map(str, input().split(" ")))
+    pyq.append(ls[1::])
+ans = []
+m = int(input())
+query = list(map(str, input().split(" ")))
+for x in query:
+    cnt = 0
+    for y in pyq:
+        if x in y:
+            cnt += 1
+    if cnt == 0 or cnt == 1:
+        ans.append(x)
+print("No one is handsome" if len(ans) == 0 else ans)
